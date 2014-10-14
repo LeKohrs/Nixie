@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  water_goal: 1
+  water_drunk: 1
+  completed: false
+  user_id: 1
+
+two:
+  water_goal: 1
+  water_drunk: 1
+  completed: false
+  user_id: 1
