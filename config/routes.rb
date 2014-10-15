@@ -13,5 +13,6 @@ Nixie::Application.routes.draw do
   get "users" => 'users#index', :as => 'users'
   post "users" => 'users#create', :as => 'create_user'
   
+  get "dashboard" => 'pages#dashboard'
   root :to => 'pages#index'
 end
