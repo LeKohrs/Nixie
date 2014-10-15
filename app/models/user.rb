@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   has_many :activities
   has_many :drinks
   
-  validates :password, length: { minimum: 3 }
+  validates :password, length: { minimum: 3 }, :on => :create
   validates :password, confirmation: true
-  validates :password_confirmation, presence: true
+  validates :password_confirmation, presence: true, :on => :create
 
   validates :email, uniqueness: true
   
