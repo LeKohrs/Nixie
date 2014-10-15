@@ -11,6 +11,6 @@ class Activity < ActiveRecord::Base
 
   def extra_oz_from_exercise
     total = self.total
-    total / 30
+    total / 30 * 12
   end
 end
