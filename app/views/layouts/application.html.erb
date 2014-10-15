@@ -11,8 +11,8 @@
     
    <div class="user_nav">
    <% if current_user %>
-     <p>Welcome, <%= current_user.name %> |</p>
-     <%= link_to "Log out", logout_path %>
+     <p>Welcome, <%= current_user.name %> | <%= link_to "Profile", user_path %> |
+     <%= link_to "Log out", logout_path %></p>
    <% else %>
      <%= link_to "Sign up", signup_path %> 
      <%= link_to "Log in", login_path %>

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       format.html
       format.json { render json: @user }
+    end
   end
   
   #Create user
@@ -28,27 +29,31 @@ class UsersController < ApplicationController
   
   # Show user
   def show
-    @user = User.find_by_id(params[:id])
+    @user = current_user
   end
   
   # Edit user
   def edit
-    @user = User.find_by_id(params[:id])
+    @user = current_user
   end
   
   # Update user
   def update
-    @user = User.find_by_id(params[:id])
-    
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'Your information has been updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @user.errors, Status: :unprocessable_entity }
-      end
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      redirect_to dashboard_path, notice: 'Wee!!'
+    else
+      render action: 'edit'
     end
+    # respond_to do |format|
+#       if @user.update_attributes(params[:user])
+#         format.html { redirect_to dashboard_path, notice: 'Your information has been updated.' }
+#         format.json { head :no_content }
+#       else
+#         format.html { render action: 'edit' }
+#         format.json { render json: @user.errors, Status: :unprocessable_entity }
+#       end
+#     end
   end
   
   # Delete user
