@@ -1,5 +1,5 @@
 class Drink < ActiveRecord::Base
-  attr_accessible :completed, :user_id, :water_drunk, :water_goal
+  attr_accessible :completed, :water_drunk, :water_goal
   
   belongs_to :users
   
