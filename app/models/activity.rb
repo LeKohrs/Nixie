@@ -3,14 +3,14 @@ class Activity < ActiveRecord::Base
   
   belongs_to :users
   
-  def total_exercise(activity)
+  def total_exercise
     total = activity.current.sum
     activity.update_column(:total, total)
     activity.save
   end
 
-  def extra_oz_from_exercise(activity)
-    total = Self.total
+  def extra_oz_from_exercise
+    total = self.total
     total / 30
   end
 end
