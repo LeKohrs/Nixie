@@ -23,7 +23,7 @@ class ActivitiesController < ApplicationController
   #NEW activity
   def new
     @activity = Activity.new
-    @user = User.find_by_id(params[:id])
+    @user = current_user
     
     respond_to do |format|
       format.html

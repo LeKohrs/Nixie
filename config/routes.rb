@@ -15,6 +15,8 @@ Nixie::Application.routes.draw do
   get "edit_user" => 'users#edit', :as => 'edit_user'
   put "user" => 'users#update', :as => 'update_user'
   
+  get "activity" => 'activities#new', :as => 'activity'
+  
   get "dashboard" => 'pages#dashboard'
   root :to => 'pages#index'
 end
