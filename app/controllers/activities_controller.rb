@@ -35,8 +35,9 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(params[:activity])
     @activity.user_id = current_user.id
-    @activity.total = current_user.activities.sum(:current)
     if @activity.save
+      @total = current_user.activities.sum(:current)
+      @activity.update_column(:total, @total)
       redirect_to dashboard_path, notice: 'Activity was saved.' 
     else
       render action: 'new' 
