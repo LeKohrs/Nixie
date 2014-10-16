@@ -3,7 +3,7 @@
 <div class="activities_ticker">
   <ul>
     <% @activities.each do |a| %>
-      <li><%= a.current %> - <%= a.total %> - <%= link_to 'Delete', a.id, :method => :delete %></li>
+      <li><%= a.current %> - <%= a.total %> - <%= link_to 'Delete', a, :method => :delete %></li>
       
     <% end %>
   </ul>
