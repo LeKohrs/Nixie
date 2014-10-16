@@ -35,7 +35,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(params[:activity])
     @activity.user_id = current_user.id
-    binding.pry
+    @activity.total = current_user.activities.sum(:current)
     if @activity.save
       redirect_to dashboard_path, notice: 'Activity was saved.' 
     else
@@ -65,7 +65,9 @@ class ActivitiesController < ApplicationController
   
   #DESTROY activity
   def destroy
-    @activity = Activity.find_by_id(params[:id])
+    binding.pry
+    @activity = Activity.find(params[:id])
+    binding.pry
     @activity.delete
     
     redirect_to dashboard_url 

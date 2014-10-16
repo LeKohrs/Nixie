@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   
   def dashboard
     @activities = current_user.activities
-    @total = current_user.activities.sum(:current)
+   
     
     respond_to do |format|
       format.html
