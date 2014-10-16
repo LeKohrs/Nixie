@@ -36,16 +36,14 @@ class ActivitiesController < ApplicationController
     @activity = Activity.new(params[:activity])
     @drinks = Drink.new
     @activity.user_id = current_user.id
-    if @activity.save
-      @total = @activity.total_exercise(@activity, current_user)
-      @extra = @activity.extra_oz_from_exercise
-      @drink_goal = @drinks.drinks_to_drink(@activity, current_user)
-      
-      
-      redirect_to dashboard_path, notice: 'Activity was saved.' 
-    else
-      render action: 'new' 
-    end
+      if @activity.save
+        @total = @activity.total_exercise(@activity, current_user)
+        @extra = @activity.extra_oz_from_exercise
+        @drink_goal = @drinks.drinks_to_drink(@activity, current_user)
+        redirect_to dashboard_path, notice: 'Activity was saved.' 
+      else
+         render action: 'new' 
+      end
   end
   
   #EDIT activity
