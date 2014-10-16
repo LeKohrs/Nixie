@@ -2,7 +2,7 @@ class Drink < ActiveRecord::Base
   attr_accessible :completed, :water_drunk, :water_goal
   
   belongs_to :user
-  
+  scope :today, where('created_at >= ?', 1.day.ago)
   
   def drinks_to_drink(activity, user)
     weight = user.weight
