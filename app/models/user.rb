@@ -12,5 +12,5 @@ class User < ActiveRecord::Base
 
   validates :email, uniqueness: true
   
-  validates :weight, numericality: { only_integer: true }, :on => :create
+  validates :weight, numericality: { only_integer: true }, :on => :update
 end
