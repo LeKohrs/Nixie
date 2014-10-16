@@ -16,7 +16,10 @@ Nixie::Application.routes.draw do
   put "user" => 'users#update', :as => 'update_user'
   
   get "activity" => 'activities#new', :as => 'activity'
+  post "activities" => 'activities#create', :as => 'create_activity'
+  delete 'activity' => 'activities#destroy'
   
   get "dashboard" => 'pages#dashboard'
   root :to => 'pages#index'
+  resources :activities
 end

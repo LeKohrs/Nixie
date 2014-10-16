@@ -35,16 +35,12 @@ class ActivitiesController < ApplicationController
   def create
     @activity = Activity.new(params[:activity])
     @activity.user_id = current_user.id
-    
-    respond_to do |format|
-      if @activity.save
-        format.html { redirect_to @activty, notice: 'Activity was saved.' }
-        format.json { render json: @activity, status: :created, location: @activity }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @activity.errors, status: :unprocessable_entity }
-      end
-    end 
+    binding.pry
+    if @activity.save
+      redirect_to dashboard_path, notice: 'Activity was saved.' 
+    else
+      render action: 'new' 
+    end
   end
   
   #EDIT activity
@@ -70,11 +66,8 @@ class ActivitiesController < ApplicationController
   #DESTROY activity
   def destroy
     @activity = Activity.find_by_id(params[:id])
-    @activity.destroy
+    @activity.delete
     
-    respond_to do |format|
-      format.html { redirect_to activity_url }
-      format.json { head :no_content }
-    end
+    redirect_to dashboard_url 
   end
 end

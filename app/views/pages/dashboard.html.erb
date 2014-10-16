@@ -1,3 +1,12 @@
 <h1>DashBoard</h1>
 
-<%= link_to "Activity", activity_path %>
+<div class="activities_ticker">
+  <ul>
+    <% @activities.each do |a| %>
+      <li><%= a.current %> - <%= link_to('Delete', activity_path(a.id), :method => :delete) %></li>
+      
+    <% end %>
+  </ul>
+</div>
+
+<%= link_to "Activity", :activity %>

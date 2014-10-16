@@ -3,8 +3,9 @@ class Activity < ActiveRecord::Base
   
   belongs_to :users
   
-  def total_exercise
-    total = activity.current.sum
+  def self.total_exercise(activity)
+    user = activity.user
+    total = user.activity.sum(:current)
     activity.update_column(:total, total)
     activity.save
   end
