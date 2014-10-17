@@ -4,10 +4,10 @@ class Drink < ActiveRecord::Base
   belongs_to :user
   scope :today, where('created_at >= ?', 1.day.ago)
   
-  def drinks_to_drink(activity, user)
+  def drinks_to_drink(activity, user, drink)
     weight = user.weight
     water_goal = weight * 0.67 + activity.extra_oz_from_exercise
-    self.update_attribute(:water_goal, water_goal)
+    drink.update_attribute(:water_goal, water_goal)
   end
   
   def show_icons
