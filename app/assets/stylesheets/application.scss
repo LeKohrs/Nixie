@@ -19,6 +19,9 @@ html {
 
 .header {
   @extend .clearfix;
+  border-bottom: solid;
+  border-color: $border-green;
+  padding-bottom: 10px;
   .water-drop {
     float: left;
   }
@@ -26,6 +29,10 @@ html {
     float: left;
     width: 350px;
     margin: 0 0 0 20px;
+  }
+  .user_nav {
+    float: right;
+    margin-right: 35px;
   }
 }
 
@@ -35,8 +42,15 @@ html {
 }
 
 .exercise-title {
-  @extend .icons;
-  background: url('assets/bicycle_64x64.png');
+  float: left;
+  h1 {
+    font-size: 180%;
+    margin: 0 0 0 10px;
+  }
+}
+
+.exercise-icon {
+  float: left;
 }
 
 footer {
