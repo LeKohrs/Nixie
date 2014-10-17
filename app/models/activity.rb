@@ -6,7 +6,6 @@ class Activity < ActiveRecord::Base
   def total_exercise(activity, user)
     total = user.activities.today.sum(:current)
     activity.update_column(:total, total)
-    activity.save
   end
 
   def extra_oz_from_exercise

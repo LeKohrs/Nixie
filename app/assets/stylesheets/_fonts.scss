@@ -1,0 +1,22 @@
+html {
+  font-family: $font;
+  color: $font-color;
+}
+
+.goal {
+  span {
+    font-size: 25px;
+  }
+  p {
+    font-size: 15px;
+  }
+}
+
+.titles h1 {
+  font-size: 180%;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+}  

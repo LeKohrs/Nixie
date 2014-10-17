@@ -9,4 +9,9 @@ class Drink < ActiveRecord::Base
     water_goal = weight * 0.67 + activity.extra_oz_from_exercise
     self.update_attribute(:water_goal, water_goal)
   end
+  
+  def show_icons
+    total = self.water_goal
+    total / 8
+  end
 end

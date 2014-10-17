@@ -1,25 +1,48 @@
-<div class="dashboard">
+<div class="dashboard clearfix">
   
-  <div class="exercise clearfix">
-    <div class="exercise-icon">
-      <img src="assets/bicycle_32x32.png">
+  <div class="exercise goal">
+    <div class="title-background clearfix">
+      <div class="exercise-icon">
+        <img src="assets/bicycle_32x32.png">
+      </div>
+      <div class="exercise-title titles">
+        <h1>EXERCISE</h1>
+      </div>
     </div>
-    <div class="exercise-title">
-      <h1>EXERCISE</h1>
+    <div class="total-exercise">
+      <p>Total minutes of exercise: <span><%= @total.total %></span></p>
+    </div>
+     <%= link_to "Add a more exercise time.", :activity, class: 'add_activity' %>
+  </div>
+  
+  <div class="water goal">
+    <div class="title-background clearfix">
+      <div class="drink-icon">
+        <img src="assets/faucet_32x32.png">
+      </div>
+      <div class="drink-title titles">
+        <h1>YOUR GOAL</h1>
+      </div>
+    </div>
+    <div class="drink-goal">
+      <p>OZ you need to drink today: <span><%= @totalDrinks.water_goal %></span></p>
     </div>
   </div>
   
-
-  <div class="activities_ticker">
-    <ul>
-      <% @activities.each do |a| %>
-        <li><%= a.current %> - <%= a.total %> - <%= link_to 'Delete', a, :method => :delete %></li>
-      
-      <% end %>
-    </ul>
-   <%= @total %> 
+  <div class="glasses">
+    <div class="title-background">
+      <div class="glass-title titles">
+        <h1>DRINKS TO DRINK</h1>
+      </div>
+    </div>
+    <div class="clearfix">
+      <div class="drinks-to-drink">
+        <% @drinks.times do %>
+          <div class="glass">
+            <img src="assets/full_glass.svg">
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <%= link_to "Activity", :activity, class: 'add_activity' %>
-
 </div>
