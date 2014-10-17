@@ -1,0 +1,16 @@
+@import 'normalize';
+@import 'settings';
+@import 'extentions';
+@import 'mixins';
+
+html {
+  background-color: #eee9e1;
+  font-family: $font;
+}
+
+#container {
+  @extend .border;
+  @include border-radius(10px);
+  margin: 20px;
+  padding: 20px;
+}
