@@ -7,7 +7,9 @@ class PagesController < ApplicationController
     @activities = current_user.activities
     @total = Activity.order("created_at").last
     @totalDrinks = Drink.order("created_at").last
-    @drinks = @totalDrinks.show_icons
+    if @total_drinks
+      @drinks = @totalDrinks.show_icons
+    end
     respond_to do |format|
       format.html
       format.json { render json: @activity }
