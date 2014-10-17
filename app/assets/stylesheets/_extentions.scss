@@ -3,3 +3,23 @@
   border-width: 5px;
   border-color: $border-color;
 }
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $font-color;
+}  
+
+.icons {
+  background-repeat: no-repeat;
+  padding-left: 40px;
+  
+}

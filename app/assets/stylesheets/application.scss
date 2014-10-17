@@ -5,6 +5,7 @@
 
 html {
   background-color: #eee9e1;
+  background-image: url('assets/paperbackground.jpg');
   font-family: $font;
 }
 
@@ -13,4 +14,31 @@ html {
   @include border-radius(10px);
   margin: 20px;
   padding: 20px;
+  min-width: 385px;
+}
+
+.header {
+  @extend .clearfix;
+  .water-drop {
+    float: left;
+  }
+  .title {
+    float: left;
+    width: 350px;
+    margin: 0 0 0 20px;
+  }
+}
+
+.main {
+  @extend a;
+  margin: 20px;
+}
+
+.exercise-title {
+  @extend .icons;
+  background: url('assets/bicycle_64x64.png');
+}
+
+footer {
+  
 }
