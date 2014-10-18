@@ -11,10 +11,12 @@
     </div>
     <div class="total-exercise">
       <% if @total %>
-      <p>Total minutes of exercise: <span><%= @total.total %></span></p>
+        <p>Total minutes of exercise: <span><%= @total.total %></span></p>
+      <%else%>
+        <p>Total minutes of exercise: <span>0</span></p>
       <% end %>
     </div>
-     <%= link_to "Add a more exercise time.", :activity, class: 'add_activity' %>
+     <%= link_to "Add more exercise time.", :activity, class: 'add_activity' %>
   </div>
   
   <div class="water goal">
@@ -29,6 +31,8 @@
     <div class="drink-goal">
       <% if @totalDrinks %>
         <p>OZ you need to drink today: <span><%= @totalDrinks.water_goal %></span></p>
+      <% else %>
+        <p>Enter your weight in your Profile to find out how much you should be drinking.</p>
       <% end %>
     </div>
   </div>

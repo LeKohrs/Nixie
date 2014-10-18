@@ -14,4 +14,6 @@ class Drink < ActiveRecord::Base
     total = self.water_goal
     total / 8
   end
+  
+  
 end

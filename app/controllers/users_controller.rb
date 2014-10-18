@@ -40,7 +40,11 @@ class UsersController < ApplicationController
   # Update user
   def update
     @user = current_user
+    @drink = Drink.new
     if @user.update_attributes(params[:user])
+      @drink.user_id = @user.id
+      @drink.water_goal = @user.default_drink_goal(current_user)
+      @drink.save
       redirect_to dashboard_path, notice: 'Wee!!'
     else
       render action: 'edit'

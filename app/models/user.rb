@@ -13,4 +13,9 @@ class User < ActiveRecord::Base
   validates :email, uniqueness: true
   
   validates :weight, numericality: { only_integer: true }, :on => :update
+  
+  def default_drink_goal(user)
+    weight = user.weight
+    weight * 0.67
+  end
 end
