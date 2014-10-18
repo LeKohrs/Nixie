@@ -41,10 +41,14 @@
     </div>
     <div class="clearfix">
       <div class="drinks-to-drink">
-        <% (0..7).each do %>
+        <% i = 1%>
+        <% while i < 9 %>
           <div class="glass">
-            <img src="assets/full_glass.svg">
+            <div class="glass<%= i %>">
+              <img src="assets/full_glass.svg">
+            </div>
           </div>
+          <% i = i + 1 %>
         <% end %>
       </div>
     </div>

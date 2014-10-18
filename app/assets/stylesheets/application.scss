@@ -11,6 +11,7 @@ html {
 
 #container {
   @extend .border;
+  @extend .boxShadows;
   @include border-radius(10px);
   margin: 20px;
   padding-bottom: 20px;
