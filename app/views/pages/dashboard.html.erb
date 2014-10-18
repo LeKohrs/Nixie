@@ -41,9 +41,7 @@
     </div>
     <div class="clearfix">
       <div class="drinks-to-drink">
-        <% if @drinks %>
-          <% @drinks.times do %>;
-        <% end %>
+        <% (0..7).each do %>
           <div class="glass">
             <img src="assets/full_glass.svg">
           </div>
