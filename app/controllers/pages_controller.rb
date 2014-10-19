@@ -5,9 +5,10 @@ class PagesController < ApplicationController
   
   def dashboard
     @activities = current_user.activities
-    @total = Activity.order("created_at").last
-    @totalDrinks = Drink.order("created_at").last
-    if @total_drinks
+    @total = @activities.order("created_at").last
+    @yourDrinks = current_user.drinks
+    @totalDrinks = @yourDrinks.order("created_at").last
+    if @totalDrinks
       @drinks = @totalDrinks.show_icons
     end
     respond_to do |format|
