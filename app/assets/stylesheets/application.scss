@@ -106,6 +106,36 @@ html {
   height: 64px;
 }
 
+.legend {
+  padding-top: 75px;
+}
+
+.legend-empty-glass {
+  margin: 10px;
+  float: left;
+  .icon {
+    float: left;
+    height: 32px;
+    width: 32px;
+  }
+  .text {
+    float: left;
+  }
+}
+
+.legend-full-glass {
+  margin: 10px;
+  float: left;
+  .icon {
+    float: left;
+    height: 32px;
+    width: 32px;
+  }
+  .text {
+    float: left;
+  }
+}
+
 footer {
   
 }
