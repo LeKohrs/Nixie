@@ -1,2 +1,11 @@
-<h1><%= current_user.name %>'s Profile</h1>
-<p><%= link_to "edit", edit_user_path %></p>
+<div class="user_profile">
+  <h1><%= current_user.name %>'s Profile</h1>
+  <p>Your email:      <span><%= current_user.email %></span></p>
+  <div class="user_weight">
+  <% if current_user.weight %>
+    <p>Your weight:   <span><%= current_user.weight %></span> <h5>(We won't tell anyone.)</h5></p>
+  <% end %>
+  </div>
+  <p>Has anything changed?</p>
+    <%= link_to " Update your profile to make Nixie more acurate.", edit_user_path %>
+</div>

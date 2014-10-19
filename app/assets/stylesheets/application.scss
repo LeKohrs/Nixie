@@ -194,6 +194,73 @@ html {
   }
 }
 
+.login {
+  max-width: 25%;
+  margin: 0 auto;
+  padding: 20px 0 20px 0;
+  h1 {
+    @include border-radius(10px);
+    background-color: $link-color;
+    text-align: center;
+    padding: 5px;
+  }
+  .field {
+    margin: 20px;
+    text-align: right;
+  }
+  .actions {
+    float: right;
+    margin-right: 20px;
+  }
+}
+
+.user_profile {
+  margin: 0 auto;
+  max-width: 30%;
+  padding: 20px 0 20px 0;
+  h1 {
+    @include border-radius(10px);
+    background-color: $link-color;
+    text-align: center;
+    padding: 5px;
+  }
+  .user_weight{
+    margin-bottom: 50px;
+    h5 {
+      display: inline;
+    }
+    p {
+      display: inline;
+    } 
+    h5 {
+      color: $link-color;
+    }
+  }
+  span {
+    color: $red;
+  }
+}
+
+.signup {
+  margin: 0 auto;
+  max-width: 40%;
+  padding: 20px 0 20px 0;
+  h1 {
+    @include border-radius(10px);
+    background-color: $link-color;
+    text-align: center;
+    padding: 5px;
+  }
+  .field {
+    margin: 20px;
+    text-align: right;
+  }
+  .actions {
+    float: right;
+    margin-right: 20px;
+  }
+}
+
 footer {
   
 }

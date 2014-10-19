@@ -19,6 +19,7 @@ Nixie::Application.routes.draw do
   post "activities" => 'activities#create', :as => 'create_activity'
   delete 'activity' => 'activities#destroy'
   
+  get "about" => 'pages#about'
   get "dashboard" => 'pages#dashboard'
   root :to => 'pages#index'
   resources :activities

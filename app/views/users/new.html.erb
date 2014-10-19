@@ -1,30 +1,38 @@
-<h1>Sign Up</h1>
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<div class="signup">
+  <h1>Sign Up</h1>
+  <%= form_for(@user) do |f| %>
+    <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <p>
+        <%= f.label "email: " %>
+        <%= f.text_field :email %>
+    </p>
+    </div>
+    <div class="field">
+      <p>
+        <%= f.label "password: " %>
+        <%= f.password_field :password %>
+      </p>
+    </div>
+    <div class="field">
+      <p>
+        <%= f.label "confirm your password: " %>
+        <%= f.password_field :password_confirmation %>
+      </p>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
-
-  <div class="field">
-    <p><%= f.label :email %></p>
-    <p><%= f.text_field :email %></p>
-  </div>
-  <div class="field">
-    <p><%= f.label :password %></p>
-    <p><%= f.password_field :password %></p>
-  </div>
-  <div class="field">
-    <p><%= f.label :password_confirmation %></p>
-    <p><%= f.password_field :password_confirmation %></p>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
