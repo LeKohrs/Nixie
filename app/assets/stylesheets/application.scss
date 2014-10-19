@@ -136,6 +136,64 @@ html {
   }
 }
 
+.front-page {
+  margin: 0 auto;
+  max-width: 65%;
+  text-align: center;
+  min-height: 400px;
+  max-height: 800px;
+  h1 {
+    font-size: 500%;
+    color: $link-color;
+  }
+  h1:hover {
+    font-size: 525%;
+  }
+  h2 {
+    font-size: 250%;
+    color: $border-green;
+  }
+  h2:hover {
+    font-size: 275%;
+  }
+  h3 {
+    font-size: 350%;
+  }
+  h3:hover {
+    font-size: 375%;
+  }
+}
+
+.intro {
+  margin: 0 auto;
+  max-width: 65%;
+  h1 {
+    @include border-radius(10px);
+    text-align: center;
+    background-color: $link-color;
+    margin-top: 50px;
+  }
+  p {
+    font-size: 125%;
+    border-bottom: solid;
+    border-color: $background-green;
+    padding: 20px 0 50px 0;
+  }
+  h2 {
+    @include border-radius(10px);
+    text-align: center;
+    background-color: $link-color;
+    margin-top: 50px;
+  }
+  .charity-list {
+    margin: 0 auto;
+    max-width: 50%;
+  }
+  li{
+    font-size: 120%;
+  }
+}
+
 footer {
   
 }

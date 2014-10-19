@@ -6,7 +6,7 @@ class Drink < ActiveRecord::Base
   
   def drinks_to_drink(activity, user, drink)
     weight = user.weight
-    water_goal = weight * 0.67 + activity.extra_oz_from_exercise
+    water_goal = weight * 0.50 + activity.extra_oz_from_exercise
     drink.update_attribute(:water_goal, water_goal)
   end
   
