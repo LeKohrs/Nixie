@@ -41,7 +41,6 @@ class ActivitiesController < ApplicationController
         @total = @activity.total_exercise(@activity, current_user)
         @extra = @activity.extra_oz_from_exercise
         @drink_goal = @drinks.drinks_to_drink(@activity, current_user, @drinks)
-        binding.pry
 
         redirect_to dashboard_path, notice: 'Activity was saved.' 
       else
