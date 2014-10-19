@@ -45,14 +45,16 @@
     </div>
     <div class="clearfix">
       <div class="drinks-to-drink">
+        <%if @drinks %>
         <% i = 1%>
-        <% while i < 9 %>
-          <div class="glass">
-            <div class="glass<%= i %>">
-              <img src="assets/full_glass.svg">
+          <% while i <= @drinks %>
+            <div class="glass">
+              <div class="glass<%= i %>">
+                <img src="assets/full_glass.svg">
+              </div>
             </div>
-          </div>
-          <% i = i + 1 %>
+            <% i = i + 1 %>
+          <% end %>
         <% end %>
       </div>
     </div>
