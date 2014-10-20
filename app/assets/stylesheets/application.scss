@@ -15,7 +15,7 @@ html {
   @include border-radius(10px);
   margin: 20px;
   padding-bottom: 20px;
-  min-width: 420px;
+  min-width: 700px;
 }
 
 .header {
@@ -261,6 +261,35 @@ html {
   }
 }
 
-footer {
-  
+.faucet {
+  width: 200px;
+  height: 400px;
+  margin-left: -23px;
+  float: left;
+}
+
+.index{
+  max-width: 400px;
+  float: left;
+      margin: 50px 0 50px 30px;
+  .tag {
+    margin-bottom: 50px;
+    color: $link-color;
+  }
+  h2 {
+    color: $link-color;
+    margin: 50px 0 50px 0;
+  }
+  p{
+   span{
+     font-weight: bold;
+   } 
+  }
+}
+.footer {
+  h5 {
+    text-align: right;
+    margin: 0 20px 0px 0;
+    font-weight: normal;
+  }
 }
